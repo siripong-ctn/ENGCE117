@@ -4,6 +4,7 @@ int main() {
     
     // รับค่า N (จำนวนรอบ)
     if (scanf("%d", &N) != 1 || N <= 0) {
+        printf("Error");
         return 1; // Handle input failure
     }
     
