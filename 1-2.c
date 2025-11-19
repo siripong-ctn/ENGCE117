@@ -4,7 +4,6 @@ int main() {
     int score;
     
     // รับค่าคะแนนสอบ
-    printf("Enter Score: ");
     scanf("%d", &score);
     if (score >= 80) {
         printf("Grade A");
