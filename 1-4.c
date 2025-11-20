@@ -5,8 +5,10 @@ int main() {
     
     // รับค่า N
     scanf("%d", &N);
-    for (i = 1; i <= N; i++) {
+    if (N >= 1) {
+        for (i = 1; i <= N; i++) {
         sum += i;
+        }
     }
     // TODO: Implement the for loop to calculate the sum from 1 to N
 
