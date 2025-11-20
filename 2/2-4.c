@@ -8,15 +8,17 @@ int main() {
     // รับค่ายอดหนี้เริ่มต้น และยอดชำระรายเดือน
     if (scanf("%f %f", &principal, &monthlyPayment)) {
         while (principal > 0){
+
             interest = principal * 0.01;
             principal = principal + interest;
             
             if (monthlyPayment < interest) {
                 principal += PENALTY;
             } 
-            principal = principal - monthlyPayment;
 
+            principal = principal - monthlyPayment;
             printf("Month %d: Remaining %.2f\n", monthCount, principal);
+
             if (monthCount < 10) {
                 monthCount++;
             } else {
