@@ -13,10 +13,8 @@ int main() {
         }
     } else if (dayCode <= 7) {
         printf("Weekend Relax Mode");
-        return 0;
     } else {
         printf("Invalid Day Code");
-        return 1; // Handle input failure
     }
     
     // TODO: Implement the main switch statement with nested if-else logic inside cases 1-5
