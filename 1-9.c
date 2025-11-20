@@ -10,16 +10,16 @@ int main() {
     switch (zoneCode){
         case 1:
             if (weight_kg <= 5) {
-                totalCost = weight_kg * 50;
+                totalCost = 50;
             } else if (weight_kg > 5) {
-                totalCost = weight_kg * 80;
+                totalCost = 80;
             }
             break;
         case 2:
             if (weight_kg <= 10) {
-                totalCost = weight_kg * 150;
+                totalCost = 150;
             } else if (weight_kg > 10) {
-                totalCost = weight_kg * 250;
+                totalCost = 250;
             }
             break;
         case 3:
