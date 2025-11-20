@@ -5,20 +5,27 @@ int main() {
     
     // รับค่าตัวเลข 2 ตัวและรหัสคำสั่ง
     scanf("%d %d %d", &num1, &num2, &operationCode);
-    if (operationCode == 1) {
+
+    switch (operationCode) {
+    case 1:
         result = num1 + num2;
         printf("%d", result);
-    } else if (operationCode == 2) {
+        break;
+    case 2:
         result = num1 - num2;
         printf("%d", result);
-    } else if (operationCode == 3) {
+        break;
+    case 3:
         result = num1 * num2;
         printf("%d", result);
-    } else if (operationCode == 4) {
+        break;
+    case 4:
         result = num1 / num2;
         printf("%d", result);
-    } else {
+        break;
+    default :
         printf("Invalid Operation");
+        break;
     }
 
     // TODO: Implement the switch statement logic here, including break and default
