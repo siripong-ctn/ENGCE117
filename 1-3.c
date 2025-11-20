@@ -7,16 +7,16 @@ int main() {
     scanf("%d %d %d", &num1, &num2, &operationCode);
     if (operationCode == 1) {
         result = num1 + num2;
-        printf("Output: %d", result);
+        printf("%d", result);
     } else if (operationCode == 2) {
         result = num1 - num2;
-        printf("Output: %d", result);
+        printf("%d", result);
     } else if (operationCode == 3) {
         result = num1 * num2;
-        printf("Output: %d", result);
+        printf("%d", result);
     } else if (operationCode == 4) {
         result = num1 / num2;
-        printf("Output: %d", result);
+        printf("%d", result);
     } else {
         printf("Invalid Operation");
     }
