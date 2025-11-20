@@ -23,9 +23,11 @@ int main() {
         return 1; // Handle input failure
         break;
     }
+    
     vatAmount = totalBill - price_before_vat;
     printf("VAT Amount: %.2f\n", vatAmount);
     printf("Total Price: %.2f\n", totalBill);
+    
     // TODO: Implement the switch statement based on categoryCode, 
     // and perform the necessary float calculations inside each case.
 
