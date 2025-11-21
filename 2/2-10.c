@@ -27,13 +27,13 @@ int main() {
 
             case 2:
                 if (amount <= 0) {
-                    printf("Withdrawal amount must be positive.\n");
+                    printf("Withdrawal amount must positive.\n");
                     break;
                 }
 
                 if (amount > balance) {
                     penaltyTotal += penaltyFee;
-                    printf("Withdrawal failed. Penalty +%.2f\n", penaltyFee);
+                    printf("Withdrawal failed penalty +%.2f\n", penaltyFee);
                     break;
                 }
 
@@ -51,14 +51,14 @@ int main() {
             }
 
             default:
-                printf("Unknown command: %d\n", command);
+                printf("Error: Invalid Command %d\n", command);
                 break;
         }
 
-        printf(">>> End of Month %d <<<\n", month);
+        printf(">>> Month %d <<<\n", month);
     }
 
-    printf("Closing Balance: %.2f\n", balance);
+    printf("Final Balance: %.2f\n", balance);
     printf("Total Penalties: %.2f\n", penaltyTotal);
 
     return 0;
