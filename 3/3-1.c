@@ -14,9 +14,9 @@ int main() {
         return 1;
     }
 
-    printf("ID: %d\n", item.productId);
-    printf("Price: %.2f\n", item.price);
-    printf("Name: %s\n", item.name);
+    printf("ID: %d ,", item.productId);
+    printf(" Price: %.2f ,", item.price);
+    printf(" Name: %s \n", item.name);
     
     return 0;
 }
