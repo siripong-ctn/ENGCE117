@@ -1,10 +1,9 @@
 #include <stdio.h>
 
-int initialStock, N, cmdCode, quantity, i;
+int initialStock, N, cmdCode, quantity, i, currentStock;
 float PENALTY_FEE;
-int currentStock;
 float totalPenalties = 0.0;
-void CMDCode_Command();
+void cmd_funtion();
 
 int main() {
 
@@ -13,13 +12,13 @@ int main() {
 
     for (i = 0; i < N; i++) {
         scanf("%d %d", &cmdCode, &quantity);
-        CMDCode_Command();
+        cmd_funtion();
     }
     
     return 0;
 }
 
-void CMDCode_Command() {
+void cmd_funtion() {
     switch (cmdCode) {
         case 1:
             currentStock += quantity;
