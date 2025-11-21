@@ -1,65 +1,65 @@
 #include <stdio.h>
 
 int main() {
-    float startBalance, penaltyFee;
-    float balance, amount;
-    float penaltyTotal = 0.0f;
-    int periods, command;
+    int N_PERIODS, cmdCode, i;
+    float initialBalance, PENALTY_FEE, amount, currentBalance;
+    float totalPenalties = 0.0;
 
-    scanf("%f %f %d", &startBalance, &penaltyFee, &periods);
+    scanf("%f %f %d", &initialBalance, &PENALTY_FEE, &N_PERIODS);
+    currentBalance = initialBalance;
 
-    balance = startBalance;
-    printf("Initial Balance: %.2f\n", startBalance);
+    printf("Starting Balance: %.2f\n", initialBalance);
 
-    for (int month = 1; month <= periods; month++) {
+    for (i = 1; i <= N_PERIODS; i++) {
 
-        if (scanf("%d %f", &command, &amount) != 2) {
-            printf("Invalid input format.\n");
+        if (scanf("%d %f", &cmdCode, &amount) != 2) {
+            printf("Input Error\n");
             break;
         }
 
-        switch (command) {
+        switch (cmdCode) {
+        case 1:
+            currentBalance += amount;
+            printf("Deposit: %.2f\n", amount);
+            break;
 
-            case 1:
-                balance += amount;
-                printf("Deposited %.2f\n", amount);
-                break;
+        case 2:
+            if (amount <= currentBalance) {
+                currentBalance -= amount;
+                printf("Withdrawal: %.2f\n", amount);
+            } else {
+                totalPenalties += PENALTY_FEE;
+                printf("WITHDRAWAL FAILED. Penalty %.2f applied.\n", PENALTY_FEE);
+            }
+            break;
 
-            case 2:
-                if (amount <= 0) {
-                    printf("Withdrawal amount must positive.\n");
-                    break;
-                }
+        case 3: {
+            float APR, interest;
 
-                if (amount > balance) {
-                    penaltyTotal += penaltyFee;
-                    printf("Withdrawal failed penalty +%.2f\n", penaltyFee);
-                    break;
-                }
-
-                balance -= amount;
-                printf("Withdrew %.2f\n", amount);
-                break;
-
-            case 3: {
-                float rate = (balance < 1000.0f) ? 1.0f : 2.5f;
-                float interest = balance * (rate / 100.0f) / 12.0f;
-                balance += interest;
-
-                printf("Interest added: %.2f (Rate %.1f%%)\n", interest, rate);
-                break;
+            if (currentBalance < 1000.0) {
+                APR = 1.0;
+            }
+            else {
+                APR = 2.5;
             }
 
-            default:
-                printf("Error: Invalid Command %d\n", command);
-                break;
+            interest = currentBalance * (APR / 100.0) / 12.0;
+            currentBalance += interest;
+
+            printf("Interest: %.2f (Rate: %.1f%%)\n", interest, APR);
+            break;
         }
 
-        printf(">>> Month %d <<<\n", month);
+        default:
+            printf("Error: Invalid Command.\n");
+            break;
+        }
+
+        printf("--- Month %d ---\n", i);
     }
 
-    printf("Final Balance: %.2f\n", balance);
-    printf("Total Penalties: %.2f\n", penaltyTotal);
+    printf("Final Balance: %.2f\n", currentBalance);
+    printf("Total Penalties: %.2f\n", totalPenalties);
 
     return 0;
 }
