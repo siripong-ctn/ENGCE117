@@ -2,15 +2,10 @@
 
 int main() {
     int N_PERIODS, cmdCode, i;
-    float initialBalance, PENALTY_FEE, amount;
-    float currentBalance;
+    float initialBalance, PENALTY_FEE, amount, currentBalance;
     float totalPenalties = 0.0;
 
-    if (scanf("%f %f %d", &initialBalance, &PENALTY_FEE, &N_PERIODS) != 3) {
-        printf("Error");
-        return 1;
-    }
-
+    scanf("%f %f %d", &initialBalance, &PENALTY_FEE, &N_PERIODS);
     currentBalance = initialBalance;
 
     printf("Starting Balance: %.2f\n", initialBalance);
