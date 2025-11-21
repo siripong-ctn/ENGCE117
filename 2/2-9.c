@@ -2,27 +2,17 @@
 
 int initialStock, N, cmdCode, quantity, i;
 float PENALTY_FEE;
-int currentStock; // ใช้เป็นตัวแปรสำหรับ stock
+int currentStock;
 float totalPenalties = 0.0;
 void CMDCode_Command();
 
 int main() {
-    
-    // 1. รับค่าเริ่มต้น 3 ค่า
-    if (scanf("%d %f %d", &initialStock, &PENALTY_FEE, &N) != 3) {
-        printf("Error");
-        return 1;
-    }
-    currentStock = initialStock;
-    
-    // TODO: Implement the for loop (N times)
-    for (i = 0; i < N; i++) {
-        // 2. รับค่า cmdCode และ quantity
-        if (scanf("%d %d", &cmdCode, &quantity) != 2) {
-            break;
-        }
 
-        // 3. Implement the switch statement with nested if-else validation
+    scanf("%d %f %d", &initialStock, &PENALTY_FEE, &N);
+    currentStock = initialStock;
+
+    for (i = 0; i < N; i++) {
+        scanf("%d %d", &cmdCode, &quantity);
         CMDCode_Command();
     }
     
