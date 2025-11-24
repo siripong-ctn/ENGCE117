@@ -1,30 +1,19 @@
 #include <stdio.h>
+int sum = 0, i, scores[5], above_average_count = 0;
+float average = 0.0;
+void score_analysis_report();
 
 int main() {
-    int scores[5];
-    int sum = 0;
-    float average = 0.0;
-    int above_average_count = 0;
-    int i;
 
     for (i = 0; i < 5; i++) {
         printf("%d: ", i + 1);
         scanf("%d", &scores[i]);
     }
-    
-    average = (float)sum / 5;
 
     printf("STUDENT SCORE ANALYSIS REPORT");
     printf("Scores: ");
 
-    for (i = 0; i < 5; i++) {
-        printf("%d ", scores[i]);
-    }
-
-    for (i = 0; i < 5; i++) {
-        sum += scores[i];
-    }
-
+    score_analysis_report();
     average = (float)sum / 5;
 
     for (i = 0; i < 5; i++) {
@@ -39,4 +28,14 @@ int main() {
     printf("Scores Above Average: %d\n", above_average_count);
 
     return 0;
+}
+
+void score_analysis_report() {
+    for (i = 0; i < 5; i++) {
+        printf("%d ", scores[i]);
+    }
+
+    for (i = 0; i < 5; i++) {
+        sum += scores[i];
+    }
 }
