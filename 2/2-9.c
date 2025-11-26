@@ -7,11 +7,20 @@ void cmd_funtion();
 
 int main() {
 
-    scanf("%d %f %d", &initialStock, &PENALTY_FEE, &N);
+    printf("Get initialStock: ");
+    scanf("%d", &initialStock);
+    printf("Get PENALTY_FEE: ");
+    scanf("%f", &PENALTY_FEE);
+    printf("Get N: ");
+    scanf("%d", &N);
+
     currentStock = initialStock;
 
     for (i = 0; i < N; i++) {
-        scanf("%d %d", &cmdCode, &quantity);
+        printf("Command: ");
+        scanf("%d", &cmdCode);
+        printf("Quantity: ");
+        scanf("%d", &quantity);
         cmd_funtion();
     }
     
@@ -24,7 +33,6 @@ void cmd_funtion() {
             currentStock += quantity;
             printf("Received %d units.\n", quantity);
             break;
-
         case 2:
             if (quantity <= 0) {
                 printf("Error: Quantity must be positive.");
@@ -37,15 +45,12 @@ void cmd_funtion() {
                 totalPenalties += PENALTY_FEE;
                 printf("FAILURE: Insufficient stock. PENALTY %.2f added.", PENALTY_FEE);
             }
-
             printf("\n");
             break;
-
         case 3:
             printf("Current Stock: %d\n", currentStock);
             printf("Total Penalties: %.2f\n", totalPenalties);
             break;
-
         default:
             printf("Error: Invalid Command.\n");
             break;
