@@ -7,17 +7,23 @@ void cmd_funtion();
 
 int main() {
 
-    scanf("%f %f %d", &initialBalance, &PENALTY_FEE, &N_PERIODS);
+    printf("Get initialBalance: ");
+    scanf("%f", &initialBalance);
+    printf("Get PENALTY_FEE: ");
+    scanf("%f", &PENALTY_FEE);
+    printf("Get N_PERIODS: ");
+    scanf("%d", &N_PERIODS);
+
     currentBalance = initialBalance;
 
     printf("Starting Balance: %.2f\n", initialBalance);
 
     for (i = 1; i <= N_PERIODS; i++) {
 
-        if (scanf("%d %f", &cmdCode, &amount) != 2) {
-            printf("Input Error\n");
-            break;
-        }
+        printf("Command: ");
+        scanf("%d", &cmdCode);
+        printf("Amount: ");
+        scanf("%f", &amount);
 
         cmd_funtion();
 
@@ -33,20 +39,18 @@ int main() {
 void cmd_funtion() {
     switch (cmdCode) {
         case 1:
-            currentBalance += amount;
+            currentBalance = currentBalance + amount;
             printf("Deposit: %.2f\n", amount);
             break;
-
         case 2:
             if (amount <= currentBalance) {
-                currentBalance -= amount;
+                currentBalance = currentBalance - amount;
                 printf("Withdrawal: %.2f\n", amount);
             } else if (amount > currentBalance) {
-                totalPenalties += PENALTY_FEE;
+                totalPenalties = totalPenalties + PENALTY_FEE;
                 printf("WITHDRAWAL FAILED. Penalty %.2f applied.\n", PENALTY_FEE);
             }
             break;
-
         case 3: {
             float APR, interest;
 
@@ -56,13 +60,11 @@ void cmd_funtion() {
             else if (currentBalance >= 1000.0) {
                 APR = 2.5;
             }
-
             interest = currentBalance * (APR / 100.0) / 12.0;
-            currentBalance += interest;
+            currentBalance = currentBalance + interest;
             printf("Interest: %.2f (Rate: %.1f%%)\n", interest, APR);
             break;
         }
-
         default:
             printf("Error: Invalid Command.\n");
             break;
