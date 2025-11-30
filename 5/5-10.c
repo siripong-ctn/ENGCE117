@@ -1,27 +1,25 @@
 #include <stdio.h>
 
 int calculate_change_amount(int cost, int paid);
-int count_denomination(int *change_remaining, int demonination);
+int count_denomination(int *change_remaining, int denomination);
+void check_printf();
+
+int total_cost;
+int amount_paid;
+int change_amount;
+int remaining_change;
+
+int count_1000, count_500, count_100, count_50,
+    count_20, count_10, count_5, count_2, count_1;
 
 int main() {
-    int total_cost;
-    int amount_paid;
-    int change_amount;
-    int remaining_change;
-
-    int count_1000, count_500, count_100, count_50,
-        count_20, count_10, count_5, count_2, count_1;
 
     printf("Total Cost (integer): ");
     scanf("%d", &total_cost);
     printf("Amount Paid (integer): ");
     scanf("%d", &amount_paid);
 
-    if (change_amount == -1) {
-        printf("\nERROR: Amount Paid is less than Total Cost.\n");
-        return 1;
-    }
-
+    change_amount = calculate_change_amount(total_cost, amount_paid);
     remaining_change = change_amount;
 
     count_1000 = count_denomination(&remaining_change, 1000);
@@ -34,12 +32,37 @@ int main() {
     count_2 = count_denomination(&remaining_change, 2);
     count_1 = count_denomination(&remaining_change, 1);
 
-    printf("\nCHANGE CALCULATION REPORT\n");
+    printf("CHANGE CALCULATION REPORT\n");
     printf("Total Cost: %d\n", total_cost);
     printf("Amount Paid: %d\n", amount_paid);
     printf("Change Amount: %d\n", change_amount);
-    printf("Denominations Breakdown:\n");
 
+    if (change_amount == -1) {
+        printf("ERROR: Amount Paid is less than Total Cost.\n");
+        return 1;
+    }
+
+    printf("Denominations Breakdown:\n");
+    check_printf();
+
+    return 0;
+}
+
+int calculate_change_amount(int cost, int paid) {
+    if (paid >= cost) {
+        return paid - cost;
+    } else {
+        return -1;
+    }
+}
+
+int count_denomination(int *change_remaining, int denomination) {
+    int count = *change_remaining / denomination;
+    *change_remaining = *change_remaining % denomination;
+    return count;
+}
+
+void check_printf() {
     if (count_1000 > 0) {
         printf("1000 Bath: %d\n", count_1000);
     }
@@ -67,20 +90,4 @@ int main() {
     if (count_1 > 0) {
         printf("1 Bath: %d\n", count_1);
     }
-
-    return 0;
-}
-
-int calculate_change_amount(int cost, int paid) {
-    if (paid >= cost) {
-        return paid - cost;
-    } else {
-        return -1;
-    }
-}
-
-int count_denomination(int *change_remaining, int denomination) {
-    int count = *change_remaining / denomination;
-    *change_remaining = *change_remaining % denomination;
-    return count;
 }
