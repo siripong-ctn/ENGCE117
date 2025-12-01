@@ -6,7 +6,7 @@ int main() {
     printf("Enter integer for loop: ");
     scanf("%d", &sum);
 
-    for (i = 0; i < sum; i++) {
+    for (i = 1; i <= sum; i++) {
         printf("[%d] Hello World\n", i);
     }
 
