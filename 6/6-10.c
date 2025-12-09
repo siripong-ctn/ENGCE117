@@ -25,6 +25,8 @@ int main() {
             scanf("%d", &record.score);
 
             calculate_grade(&record);
+            // calculate grade at Student.score
+            // and return to Student.grade
 
             printf("Data updated. Grade calculated.\n");
             break;
