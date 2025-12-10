@@ -1,33 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-void reverse(char str[]);
+void reverse(char str1[],char str2[]);
 
-int main() {
-    char text[100];
+int main(){
+    char text[50];
+    char out[50];
 
-    printf("Enter String: ");
-    fgets(text, sizeof(text), stdin);
-    // fgets อ่านข้อความที่เว้นวรรคได้ scanf จะไม่อ่านข้อความที่เว้นวรรคเมื่อเข้าฟังก์ชัน
+    printf("Enter a String: ");
+    scanf("%s", text);
 
-    text[strcspn(text, "\n")] = '\0';
-
-    reverse(text);
-    printf("Reversed string: %s\n", text);
+    printf("Output: ");
+    reverse(text,out);
 
     return 0;
 }
 
-void reverse(char str[]) {
-    int start = 0;
-    int end = strlen(str) - 1;
-    char temp;
+void reverse(char str1[],char str2[]){
+    int length = strlen(str1);
+    int i, j ;
 
-    while (start < end) {
-        temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
+    for(int i = 0 , j = length -1 ;i < length; i++,j--){
+        str2[i]=str1[j];
     }
+    str2[length] = '\0';
+    printf("%s\n",str2);
 }
