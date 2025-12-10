@@ -19,9 +19,11 @@ int main(){
 void reverse(char str1[],char str2[]){
     int length = strlen(str1);
     int n, m;
-    for(n = 0 , m = length -1 ;n < length; n++,m--){
-        str2[n]=str1[m];
+    
+    for(n = 0 , m = length -1 ;n < length; n++,m--) {
+        str2[n] = str1[m];
     }
+
     str2[length] = '\0';
     printf("%s\n",str2);
 }
