@@ -16,14 +16,14 @@ int main(){
     return 0;
 }
 
-void reverse(char str1[],char str2[]){
-    int length = strlen(str1);
+void reverse(char str1[],char str2[]) {
+    int l = strlen(str1);
     int n, m;
-    
-    for(n = 0 , m = length -1 ;n < length; n++,m--) {
+
+    for(n = 0 , m = l -1 ;n < l; n++,m--) {
         str2[n] = str1[m];
     }
 
-    str2[length] = '\0';
+    str2[l] = '\0';
     printf("%s\n",str2);
 }
