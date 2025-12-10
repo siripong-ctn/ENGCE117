@@ -6,8 +6,12 @@ void explode(char str1[], char splitter, char str2[][10], int *count);
 int main() {
     char out[20][10];
     int num = 0;
+    char get[100];
 
-    explode("I/Love/You", '/', out, &num);
+    printf("Enter any String with (/): ");
+    scanf("%s", get);
+
+    explode(get, '/', out, &num);
 
     for(int i = 0; i < num; i++) {
         printf("%d: %s\n", i + 1, out[i]);
