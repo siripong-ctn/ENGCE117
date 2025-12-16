@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void handling();
+void handling_w();
 FILE *fptr;
 int year = 2025;
 char FILENAME[100];
 
 int main() {
-    handling();
+    handling_w();
 
     if (fptr == NULL) {
         printf("ERROR: Could not open file %s for writing.\n", FILENAME);
@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 
-void handling() {
+void handling_w() {
     printf("Enter file name: ");
     scanf("%s", FILENAME);
     fptr = fopen(FILENAME, "w");
