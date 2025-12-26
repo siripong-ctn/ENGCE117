@@ -11,11 +11,11 @@ struct studentNode {
 };
 
 void SaveNode(struct studentNode *child, char n[], int a, char s, float g);
-void GoNext1(struct studentNode *walk);
+void GoNext1(struct studentNode **walk);
 
 int main() {
-    struct studentNode *start, *now1;
-
+    struct studentNode *start, *now1, **now2;
+    
     start = (struct studentNode*)malloc(sizeof(struct studentNode));
     SaveNode(start, "one", 6, 'M', 3.11);
 
@@ -29,8 +29,10 @@ int main() {
     SaveNode(start->next->next->next, "four", 12, 'F', 3.44);
 
     now1 = start;
+    now2 = &start;
 
-    GoNext1(now1);
+    GoNext1(&now1);
+    printf("%s ", now1->name);
 
     return 0;
 }
@@ -43,13 +45,13 @@ void SaveNode(struct studentNode *child, char n[], int a, char s, float g) {
     child->next = NULL;
 }
 
-void GoNext1(struct studentNode *walk) {
-    while (walk != NULL) {
-        printf("Name: %s\n", walk->name);
-        printf("Age: %d\n", walk->age);
-        printf("Sex: %c\n", walk->sex);
-        printf("GPA: %.2f\n", walk->gpa);
-        printf("=========\n");
-        walk = walk->next;
+void GoNext1(struct studentNode **walk) {
+    while (*walk != NULL) {
+        printf("Name: %s\n", (*walk)->name);
+        printf("Age: %d\n", (*walk)->age);
+        printf("Sex: %c\n", (*walk)->sex);
+        printf("GPA: %.2f\n", (*walk)->gpa);
+        printf("**********\n");
+        *walk = (*walk)->next;
     }
 }
