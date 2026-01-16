@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct studentNode
-{
+struct studentNode {
     char name[20];
     int age;
     char sex;
@@ -18,8 +17,7 @@ void InsNode(struct studentNode *walk, char *name, int age, char sex, float gpa,
 void GoBack(struct studentNode **walk);
 void DelNode(struct studentNode **walk, struct studentNode **begin);
 
-int main()
-{
+int main() {
     struct studentNode *start = NULL, *now = NULL;
 
     printf("*Add*\n");
@@ -56,18 +54,15 @@ int main()
     return 0;
 }
 
-void ShowAll(struct studentNode *walk)
-{
-    while (walk != NULL)
-    {
+void ShowAll(struct studentNode *walk) {
+    while (walk != NULL) {
         printf("[%s] ", walk->name);
         walk = walk->next;
     }
-    printf("\n\n");
+    printf("\n");
 }
 
-struct studentNode *AddNode(struct studentNode **start, char *name, int age, char sex, float gpa)
-{
+struct studentNode *AddNode(struct studentNode **start, char *name, int age, char sex, float gpa) {
     struct studentNode *newNode = malloc(sizeof(struct studentNode));
 
     strcpy(newNode->name, name);
@@ -77,12 +72,9 @@ struct studentNode *AddNode(struct studentNode **start, char *name, int age, cha
     newNode->next = NULL;
     newNode->back = NULL;
 
-    if (*start == NULL)
-    { // กรณี node แรก
+    if (*start == NULL) {
         *start = newNode;
-    }
-    else
-    { // ต่อท้าย list
+    } else {
         struct studentNode *walk = *start;
         while (walk->next != NULL)
             walk = walk->next;
@@ -92,8 +84,7 @@ struct studentNode *AddNode(struct studentNode **start, char *name, int age, cha
     return newNode;
 }
 
-void InsNode(struct studentNode *walk, char *name, int age, char sex, float gpa, struct studentNode **begin)
-{
+void InsNode(struct studentNode *walk, char *name, int age, char sex, float gpa, struct studentNode **begin) {
     struct studentNode *newNode = malloc(sizeof(struct studentNode));
 
     strcpy(newNode->name, name);
@@ -104,49 +95,38 @@ void InsNode(struct studentNode *walk, char *name, int age, char sex, float gpa,
     newNode->next = walk;
     newNode->back = walk->back;
 
-    if (walk->back != NULL)
-    {
+    if (walk->back != NULL) {
         walk->back->next = newNode;
-    }
-    else
-    {
-        *begin = newNode; // แทรกหน้าแรก
+    } else {
+        *begin = newNode;
     }
 
     walk->back = newNode;
 }
 
-void GoBack(struct studentNode **walk)
-{
-    if (*walk != NULL && (*walk)->back != NULL)
-    {
+void GoBack(struct studentNode **walk) {
+    if (*walk != NULL && (*walk)->back != NULL) {
         *walk = (*walk)->back;
     }
 }
 
-void DelNode(struct studentNode **walk, struct studentNode **begin)
-{
-    if (*walk == NULL)
+void DelNode(struct studentNode **walk, struct studentNode **begin) {
+    if (*walk == NULL) {
         return;
-
+    }
+        
     struct studentNode *temp;
 
-    if ((*walk)->back != NULL)
-    {
+    if ((*walk)->back != NULL) {
         (*walk)->back->next = (*walk)->next;
-    }
-    else
-    {
+    } else {
         *begin = (*walk)->next;
     }
 
-    if ((*walk)->next != NULL)
-    {
+    if ((*walk)->next != NULL) {
         (*walk)->next->back = (*walk)->back;
         temp = (*walk)->next;
-    }
-    else
-    {
+    } else {
         temp = (*walk)->back;
     }
 
