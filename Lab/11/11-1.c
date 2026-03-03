@@ -9,7 +9,7 @@ int main() {
     scanf("%d", &get);
     int pos = BinSearch(data, 6, get);
 
-    printf("Found at %d", pos);
+    printf("Found %d at %d", get, pos);
     return 0;
 }
 
