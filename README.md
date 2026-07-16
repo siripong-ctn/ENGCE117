@@ -1,641 +1,230 @@
-# ENGCE117
-## Computer Programming for Computer Engineer
+# ENGCE117 - Computer Programming for Computer Engineer
+
+## C Programming
+ภาษาโปรแกรมเชิงกระบวนการ (Procedural Programming) ที่เน้นการทำงานเป็นขั้นตอน มีประสิทธิภาพสูงและเข้าถึงหน่วยความจำได้โดยตรง
+
+**จุดเด่น**
+- เร็วและใช้ทรัพยากรน้อย
+- เหมาะกับ System Programming และ Embedded System
+- รองรับ Pointer และ Memory Management
 
 ---
 
-# Course Overview
+## C++ Programming
+ภาษาที่พัฒนาต่อยอดจาก C โดยเพิ่มแนวคิด OOP (Object-Oriented Programming)
 
-ENGCE117 (Computer Programming for Computer Engineer) introduces fundamental programming concepts and problem-solving techniques for computer engineering students. The course focuses on structured programming, algorithm development, software design principles, and practical programming implementation.
-
-Students learn how to translate engineering problems into computational solutions using modern programming languages and development tools.
-
----
-
-# Course Objectives
-
-After completing this course, students should be able to:
-
-- Understand fundamental programming concepts
-- Analyze computational problems
-- Design algorithms using logical thinking
-- Use variables and data types correctly
-- Apply control structures effectively
-- Develop modular programs using functions
-- Manipulate arrays and strings
-- Understand file processing techniques
-- Perform debugging and testing
-- Develop simple engineering applications
+**คุณสมบัติหลัก**
+- Class และ Object
+- Inheritance
+- Polymorphism
+- Encapsulation
+- Reusability สูง
 
 ---
 
-# Learning Topics
+## Function
+กลุ่มคำสั่งที่ถูกจัดเก็บไว้เพื่อเรียกใช้งานซ้ำได้
+
+**ข้อดี**
+- ลดการเขียนโค้ดซ้ำ
+- ทำให้โปรแกรมเป็นระบบ
+- ง่ายต่อการแก้ไขและบำรุงรักษา
+
+**ประเภท**
+- Built-in Function
+- User-defined Function
 
 ---
 
-## Introduction to Programming
+## Array
+โครงสร้างข้อมูลที่เก็บข้อมูลชนิดเดียวกันหลายค่าในหน่วยความจำที่ต่อเนื่องกัน
 
-Programming is the process of creating a set of instructions that a computer can execute.
+**ลักษณะ**
+- เข้าถึงข้อมูลด้วย Index
+- ขนาดคงที่
+- ค้นหาข้อมูลได้รวดเร็ว
 
-Basic steps:
-
-```text
-Problem Analysis
-      ↓
-Algorithm Design
-      ↓
-Coding
-      ↓
-Compilation
-      ↓
-Execution
-      ↓
-Testing
-      ↓
-Maintenance
-```
+**ประเภท**
+- One-Dimensional Array
+- Multi-Dimensional Array
 
 ---
 
-## Algorithm Design
+## String
+ชุดของตัวอักษรที่เก็บในรูปแบบ Array ของ Character และจบด้วย `'\0'`
 
-An algorithm is a finite sequence of well-defined instructions used to solve a problem.
-
-Characteristics:
-
-- Finite
-- Unambiguous
-- Efficient
-- Correct
-- Repeatable
-
-Example:
-
-```text
-Start
-Read A
-Read B
-Sum = A + B
-Display Sum
-End
-```
+**การใช้งานหลัก**
+- รับและแสดงข้อความ
+- เปรียบเทียบข้อความ
+- เชื่อมข้อความ
+- ค้นหาข้อความ
 
 ---
 
-## Flowcharts
+## Structure
+โครงสร้างข้อมูลที่สามารถเก็บข้อมูลหลายชนิดไว้ภายในตัวแปรเดียวกัน
 
-Flowcharts are graphical representations of algorithms.
-
-Common Symbols:
-
-### Start / End
-
-```text
-Oval
-```
-
-### Process
-
-```text
-Rectangle
-```
-
-### Decision
-
-```text
-Diamond
-```
-
-### Input / Output
-
-```text
-Parallelogram
-```
+**ประโยชน์**
+- จัดเก็บข้อมูลที่เกี่ยวข้องกัน
+- ใช้สร้าง Record ของข้อมูล
+- เป็นพื้นฐานของ Data Structure อื่น ๆ
 
 ---
 
-# Programming Fundamentals
+## Pointer
+ตัวแปรที่เก็บ Address ของตัวแปรอื่น
+
+**ประโยชน์**
+- จัดการหน่วยความจำ
+- ส่งข้อมูลเข้าฟังก์ชันแบบอ้างอิง
+- ใช้สร้าง Linked List และ Data Structure ต่าง ๆ
+
+**Operator สำคัญ**
+- `&` : Address Of
+- `*` : Dereference
 
 ---
 
-## Variables
+## Singly Linked List
+โครงสร้างข้อมูลแบบเชื่อมโยงที่แต่ละ Node ชี้ไปยัง Node ถัดไปเพียงตัวเดียว
 
-A variable is a named storage location used to hold data.
+**องค์ประกอบ**
+- Data
+- Next Pointer
 
-Example:
-
-```c
-int age = 20;
-```
-
----
-
-## Constants
-
-Constants are values that do not change during program execution.
-
-Example:
-
-```c
-const float PI = 3.14159;
-```
+**ข้อดี**
+- เพิ่ม/ลบข้อมูลได้ง่าย
+- ไม่ต้องกำหนดขนาดล่วงหน้า
 
 ---
 
-## Data Types
+## Doubly Linked List
+Linked List ที่แต่ละ Node มี Pointer สองตัว
 
-### Integer
+**องค์ประกอบ**
+- Previous Pointer
+- Data
+- Next Pointer
 
-```c
-int number = 10;
-```
-
-### Floating Point
-
-```c
-float temperature = 36.5;
-```
-
-### Character
-
-```c
-char grade = 'A';
-```
-
-### String
-
-```c
-char name[] = "Computer Engineering";
-```
+**ข้อดี**
+- เดินข้อมูลได้ทั้งหน้าและหลัง
+- ลบ Node ได้สะดวกกว่า Singly Linked List
 
 ---
 
-# Operators
+## Object Linked List
+Linked List ที่เก็บข้อมูลในรูปแบบ Object หรือ Class
+
+**คุณสมบัติ**
+- รองรับ OOP
+- จัดการข้อมูลซับซ้อนได้ดี
+- ใช้สร้างระบบจัดเก็บข้อมูลขนาดใหญ่
 
 ---
 
-## Arithmetic Operators
+## File Handling
+การจัดการไฟล์สำหรับบันทึกและอ่านข้อมูลจาก Storage
 
-```text
-+ Addition
-- Subtraction
-* Multiplication
-/ Division
-% Modulus
-```
+**การทำงานหลัก**
+- Create File
+- Open File
+- Read File
+- Write File
+- Close File
 
-Example:
-
-```c
-result = a + b;
-```
+**ประโยชน์**
+- เก็บข้อมูลถาวร
+- ใช้จัดการฐานข้อมูลขนาดเล็ก
 
 ---
 
-## Relational Operators
+## Recursion
+เทคนิคที่ฟังก์ชันเรียกใช้งานตัวเอง
 
-```text
-==
-!=
->
-<
->=
-<=
-```
+**องค์ประกอบสำคัญ**
+- Base Case
+- Recursive Case
 
-Example:
-
-```c
-if(a > b)
-```
+**ตัวอย่างการใช้งาน**
+- Factorial
+- Fibonacci
+- Tree Traversal
 
 ---
 
-## Logical Operators
+## Divide and Conquer
+เทคนิคแก้ปัญหาโดยแบ่งปัญหาใหญ่เป็นปัญหาย่อย
 
-```text
-&&  Logical AND
-||  Logical OR
-!   Logical NOT
-```
+**ขั้นตอน**
+1. Divide
+2. Conquer
+3. Combine
 
-Example:
-
-```c
-if(a > b && b > c)
-```
-
----
-
-# Control Structures
+**ตัวอย่าง**
+- Merge Sort
+- Quick Sort
+- Binary Search
 
 ---
 
-## Sequential Execution
+## Greedy Algorithm
+อัลกอริทึมที่เลือกคำตอบที่ดีที่สุดในแต่ละขั้นตอน
 
-Statements execute one after another.
+**แนวคิด**
+- ตัดสินใจทันที (Local Optimal)
+- หวังให้ได้ผลลัพธ์ดีที่สุดโดยรวม
 
-```c
-a = 5;
-b = 10;
-c = a + b;
-```
-
----
-
-## Selection Statements
-
-### if Statement
-
-```c
-if(score >= 50)
-{
-    printf("Pass");
-}
-```
+**ตัวอย่าง**
+- Activity Selection
+- Huffman Coding
+- Minimum Spanning Tree
 
 ---
 
-### if-else Statement
+## DAG (Directed Acyclic Graph)
+กราฟแบบมีทิศทางและไม่มีวงจร
 
-```c
-if(score >= 50)
-{
-    printf("Pass");
-}
-else
-{
-    printf("Fail");
-}
-```
+**คุณสมบัติ**
+- เดินตามเส้นทางแล้วไม่กลับมาจุดเดิม
+- ใช้แสดงลำดับก่อนหลังของงาน
 
----
-
-### switch Statement
-
-```c
-switch(choice)
-{
-    case 1:
-        break;
-
-    case 2:
-        break;
-}
-```
+**การประยุกต์**
+- Task Scheduling
+- Dependency Management
+- Topological Sorting
 
 ---
 
-## Iteration Statements
+## Backtracking
+เทคนิคค้นหาคำตอบโดยลองทำและย้อนกลับเมื่อไม่ถูกต้อง
 
-### for Loop
+**หลักการ**
+1. เลือกทางเลือก
+2. ตรวจสอบเงื่อนไข
+3. หากไม่ถูกต้องให้ย้อนกลับ
 
-```c
-for(int i=0;i<10;i++)
-{
-    printf("%d",i);
-}
-```
-
----
-
-### while Loop
-
-```c
-while(condition)
-{
-    statement;
-}
-```
+**ตัวอย่าง**
+- N-Queen
+- Sudoku Solver
+- Maze Solver
 
 ---
 
-### do-while Loop
+## Bisection Method
+วิธีหาค่ารากของสมการโดยแบ่งช่วงครึ่งหนึ่งซ้ำ ๆ
 
-```c
-do
-{
-    statement;
-}
-while(condition);
-```
+**หลักการ**
+- กำหนดช่วง `[a,b]`
+- เลือกค่ากลาง `c`
+- ตรวจสอบเครื่องหมายของฟังก์ชัน
+- ลดช่วงจนได้ค่าที่ต้องการ
 
----
-
-# Functions
-
-Functions improve modularity and code reuse.
-
-Example:
-
-```c
-int add(int a, int b)
-{
-    return a + b;
-}
-```
-
-Benefits:
-
-- Reusability
-- Maintainability
-- Better organization
-- Easier debugging
+**ข้อดี**
+- เข้าใจง่าย
+- มีความเสถียรสูง
+- เหมาะกับการคำนวณเชิงตัวเลข
 
 ---
 
-# Arrays
-
-Arrays store multiple values of the same data type.
-
-Example:
-
-```c
-int score[5];
-```
-
-Initialization:
-
-```c
-int score[5] = {10,20,30,40,50};
-```
-
----
-
-# Strings
-
-Strings are arrays of characters.
-
-Example:
-
-```c
-char name[] = "ENGCE117";
-```
-
-Common Functions:
-
-```c
-strlen()
-strcpy()
-strcat()
-strcmp()
-```
-
----
-
-# Pointers
-
-Pointers store memory addresses.
-
-Example:
-
-```c
-int x = 10;
-int *ptr = &x;
-```
-
-Benefits:
-
-- Dynamic memory management
-- Efficient data access
-- Advanced programming techniques
-
----
-
-# Structures
-
-Structures combine multiple data types.
-
-Example:
-
-```c
-struct Student
-{
-    int id;
-    char name[50];
-};
-```
-
----
-
-# File Handling
-
-File processing allows data storage and retrieval.
-
-Example:
-
-```c
-FILE *fp;
-fp = fopen("data.txt","r");
-```
-
-Operations:
-
-```text
-Open
-Read
-Write
-Append
-Close
-```
-
----
-
-# Debugging and Testing
-
-Debugging is the process of finding and fixing errors in software.
-
-Types of Errors:
-
-### Syntax Errors
-
-```c
-printf("Hello")
-```
-
-Missing:
-
-```c
-;
-```
-
----
-
-### Runtime Errors
-
-Example:
-
-```c
-division by zero
-```
-
----
-
-### Logical Errors
-
-Program runs but produces incorrect output.
-
----
-
-# Development Tools
-
----
-
-## Visual Studio Code (VS Code)
-
-Visual Studio Code is a lightweight and extensible source code editor.
-
-Recommended Extensions:
-
-### C/C++
-
-```text
-Microsoft C/C++ Extension
-```
-
-Provides:
-
-- IntelliSense
-- Debugging
-- Code completion
-- Syntax highlighting
-
----
-
-### Code Runner
-
-Run programs directly inside VS Code.
-
-Supported Languages:
-
-- C
-- C++
-- Python
-- Java
-- JavaScript
-
----
-
-### Error Lens
-
-Displays compiler diagnostics directly in the editor.
-
----
-
-### GitLens
-
-Provides advanced Git integration.
-
----
-
-# GCC Compiler
-
-The GNU Compiler Collection (GCC) is commonly used for compiling C programs.
-
-Compile:
-
-```bash
-gcc program.c -o program
-```
-
-Run:
-
-```bash
-./program
-```
-
-Windows:
-
-```powershell
-program.exe
-```
-
----
-
-# Git and GitHub
-
-Git is a distributed version control system.
-
-GitHub is a cloud platform for source code hosting and collaboration.
-
----
-
-## Git Workflow
-
-Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
-Check Status
-
-```bash
-git status
-```
-
-Add Files
-
-```bash
-git add .
-```
-
-Commit Changes
-
-```bash
-git commit -m "Update project"
-```
-
-Push Changes
-
-```bash
-git push
-```
-
----
-
-# Repository Structure
-
-The repository contains programming exercises, laboratory assignments, and examples related to:
-
-```text
-Programming Fundamentals
-Control Structures
-Functions
-Arrays
-Strings
-Structures
-File Handling
-Problem Solving
-```
-
-Each laboratory exercise is designed to strengthen practical programming skills and computational thinking.
-
----
-
-# Learning Outcomes
-
-Upon successful completion of ENGCE117, students will be able to:
-
-- Design algorithms systematically
-- Implement programs using C programming language
-- Apply programming concepts to engineering problems
-- Debug and test software effectively
-- Use development tools professionally
-- Manage projects using Git and GitHub
-- Develop a strong foundation for advanced computer engineering courses
-
----
-
-# References
-
-1. Paul Deitel, *C How to Program*
-2. Brian W. Kernighan and Dennis Ritchie, *The C Programming Language*
-3. Yashavant Kanetkar, *Let Us C*
-4. GCC Documentation
-5. Git Documentation
-6. Visual Studio Code Documentation
-
----
-
-**Course:** ENGCE117 – Computer Programming for Computer Engineer  
-**Focus Areas:** Programming Fundamentals, Problem Solving, Algorithm Design, Software Development, Git & GitHub
+## สรุป
+เนื้อหาในรายวิชา ENGCE117 ครอบคลุมพื้นฐานการเขียนโปรแกรมด้วย C/C++ การจัดการข้อมูลด้วย Array, String, Structure และ Pointer รวมถึง Data Structure เช่น Linked List และเทคนิค Algorithm สำคัญ ได้แก่ Recursion, Divide and Conquer, Greedy, DAG, Backtracking และ Bisection Method ซึ่งเป็นพื้นฐานสำคัญสำหรับการพัฒนาซอฟต์แวร์และการแก้ปัญหาทางวิศวกรรมคอมพิวเตอร์
