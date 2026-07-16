@@ -448,7 +448,3 @@ x = 2
 - Guaranteed convergence when conditions are satisfied
 
 ---
-
-# Summary
-
-This course covers fundamental programming concepts using **C and C++**, including **Functions, Arrays, Strings, Structures, and Pointers**. It also introduces essential **Data Structures** such as **Singly Linked Lists, Doubly Linked Lists, and Object Linked Lists**, along with **File Handling** techniques. Advanced problem-solving techniques include **Recursion, Divide and Conquer, Greedy Algorithms, DAGs, Backtracking, and the Bisection Method**, which are fundamental for software development and computer engineering.
