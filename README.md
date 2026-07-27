@@ -136,7 +136,7 @@ gcc hello.c -o hello
 
 ---
 
-| `gcc --version` |
-| `gcc name1.c -o name2` |
-| `./name2` |
-| `.\name2.exe` |
+| `gcc --version` | ตรวจสอบการติดตั้ง GCC |
+| `gcc name1.c -o name2` | คอมไพล์โปรแกรม |
+| `./name2` | รันโปรแกรม (Linux/macOS) |
+| `.\name2.exe` | รันโปรแกรม (Windows) |
