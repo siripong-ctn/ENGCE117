@@ -1,7 +1,6 @@
 # ENGCE117 - Computer Programming for Computer Engineer
 
-## 1. ติดตั้ง C Compiler
-### Windows
+## ติดตั้ง C Compiler
 แนะนำให้ติดตั้ง **MinGW-w64** หรือ **MSYS2** ซึ่งมี GCC Compiler
 
 ตรวจสอบการติดตั้งด้วยคำสั่ง
@@ -12,36 +11,9 @@ gcc --version
 
 หากแสดงเวอร์ชันของ GCC แสดงว่าติดตั้งเรียบร้อยแล้ว
 
-### Linux (Ubuntu/Debian)
-
-```bash
-sudo apt update
-sudo apt install build-essential
-```
-
-ตรวจสอบการติดตั้ง
-
-```bash
-gcc --version
-```
-
-### macOS
-
-ติดตั้ง Xcode Command Line Tools
-
-```bash
-xcode-select --install
-```
-
-ตรวจสอบการติดตั้ง
-
-```bash
-gcc --version
-```
-
 ---
 
-## 2. สร้างไฟล์โปรแกรมภาษา C
+## สร้างไฟล์โปรแกรมภาษา C
 
 สร้างไฟล์ชื่อ
 
@@ -62,7 +34,7 @@ int main() {
 
 ---
 
-## 3. คอมไพล์โปรแกรม
+## คอมไพล์โปรแกรม
 
 ใช้คำสั่ง
 
@@ -85,35 +57,7 @@ name2
 
 ---
 
-## 4. รันโปรแกรม
-
-บน Linux หรือ macOS
-
-```bash
-./name2
-```
-
-ผลลัพธ์
-
-```text
-Hello, World!
-```
-
-บน Windows
-
-```bash
-name2.exe
-```
-
-หรือ
-
-```bash
-.\name2.exe
-```
-
----
-
-## 5. ตัวอย่าง Workflow
+## ตัวอย่าง Workflow
 
 สร้างไฟล์
 
