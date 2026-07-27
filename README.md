@@ -136,11 +136,7 @@ gcc hello.c -o hello
 
 ---
 
-## สรุปคำสั่งที่ใช้บ่อย
-
-| คำสั่ง | ความหมาย |
-|---------|----------|
-| `gcc --version` | ตรวจสอบการติดตั้ง GCC |
-| `gcc name1.c -o name2` | คอมไพล์โปรแกรม |
-| `./name2` | รันโปรแกรม (Linux/macOS) |
-| `.\name2.exe` | รันโปรแกรม (Windows) |
+| `gcc --version` |
+| `gcc name1.c -o name2` |
+| `./name2` |
+| `.\name2.exe` |
