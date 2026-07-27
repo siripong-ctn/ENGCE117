@@ -1,7 +1,6 @@
 # ENGCE117
-## Computer Programming for Computer Engineer
-
-# C Programming Setup Guide
+Computer Programming for Computer Engineer
+C Programming Setup Guide
 
 A beginner-friendly guide to installing a C compiler, writing your first program, and executing it on Windows, macOS, and Linux.
 
