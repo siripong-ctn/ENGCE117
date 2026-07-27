@@ -1,7 +1,5 @@
 # ENGCE117 - Computer Programming for Computer Engineer
 
-## การเริ่มต้นใช้งานภาษา C
-
 ## 1. ติดตั้ง C Compiler
 
 ### Windows
