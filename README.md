@@ -39,7 +39,7 @@ Mac computers come with `clang`, which functions exactly like `gcc` for standard
    ```
 3. Click **Install** on the pop-up window that appears.
 
-### 🐧 Linux (Using GCC)
+### Linux (Using GCC)
 Update your local package manager index and install the development packages.
 
 * **Ubuntu / Debian / Mint:**
@@ -52,7 +52,7 @@ Update your local package manager index and install the development packages.
   sudo dnf groupinstall "Development Tools"
   ```
 
-## 🔍 2. Verify Your Installation
+## 2. Verify Your Installation
 
 Restart your terminal application and type the following command to verify the compiler is working properly:
 
