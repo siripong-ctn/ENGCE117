@@ -1,7 +1,6 @@
 # ENGCE117 - Computer Programming for Computer Engineer
 
 ## 1. ติดตั้ง C Compiler
-
 ### Windows
 แนะนำให้ติดตั้ง **MinGW-w64** หรือ **MSYS2** ซึ่งมี GCC Compiler
 
@@ -140,5 +139,5 @@ gcc hello.c -o hello
 |---------|----------|
 | `gcc --version` | ตรวจสอบการติดตั้ง GCC |
 | `gcc name1.c -o name2` | คอมไพล์โปรแกรม |
-| `./name2` | รันโปรแกรม (Linux/macOS) |
-| `.\name2.exe` | รันโปรแกรม (Windows) |
+| `./name2` | รันโปรแกรม |
+| `.\name2.exe` | รันโปรแกรมเหมือนกันแต่คนละสี) |
