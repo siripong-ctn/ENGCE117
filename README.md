@@ -24,7 +24,7 @@ my_program.exe   # Windows
 
 ---
 
-## 🛠️ 1. Install a C Compiler
+## 1. Install a C Compiler
 
 Choose the installation instructions for your specific operating system below.
 
