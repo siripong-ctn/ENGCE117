@@ -9,7 +9,7 @@ A beginner-friendly guide to installing a C compiler, writing your first program
 
 ---
 
-## 🚀 Quick Start (TL;DR)
+## Quick Start (TL;DR)
 
 If you already have a C compiler installed, run these commands in your terminal:
 
@@ -28,7 +28,7 @@ my_program.exe   # Windows
 
 Choose the installation instructions for your specific operating system below.
 
-### 🪟 Windows (Using MinGW-w64)
+### Windows (Using MinGW-w64)
 1. Download the [MSYS2 Installer](https://msys2.org) or [MinGW-w64](https://mingw-w64.org).
 2. Complete the installation wizard.
 3. Open your Windows **Command Prompt** or **PowerShell** and run the following setup command:
@@ -37,7 +37,7 @@ Choose the installation instructions for your specific operating system below.
    ```
 4. Add the `bin` folder path (e.g., `C:\msys64\mingw64\bin`) to your system's **Environment Variables** under the `Path` variable.
 
-### 🍎 macOS (Using Apple Clang)
+### macOS (Using Apple Clang)
 Mac computers come with `clang`, which functions exactly like `gcc` for standard compilation.
 1. Open your terminal.
 2. Trigger the command-line developer tools installation:
@@ -73,7 +73,7 @@ If a version number outputs on the screen, your compiler is ready to use!
 
 ---
 
-## 📝 3. Write, Compile, and Run Your Code
+## 3. Write, Compile, and Run Your Code
 
 ### Step 1: Create a Source File
 Create a new file named `hello.c` and paste this basic "Hello, World!" blueprint into it:
@@ -115,7 +115,7 @@ Hello, World!
 
 ---
 
-## 💡 Troubleshooting Tips
+## Troubleshooting Tips
 
 * **`'gcc' is not recognized...`**: This means your compiler's binary path was not added to your system environment variables correctly. Restart your computer or double-check your `Path` setup.
 * **Permission Denied (Linux/macOS)**: If `./hello` throws an error, make sure the file has permission to run by executing `chmod +x hello` first.
