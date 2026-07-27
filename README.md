@@ -1,13 +1,9 @@
 # ENGCE117
 ## Computer Programming for Computer Engineer
 
----
-
 # C Programming Setup Guide
 
 A beginner-friendly guide to installing a C compiler, writing your first program, and executing it on Windows, macOS, and Linux.
-
----
 
 ## Quick Start (TL;DR)
 
@@ -21,8 +17,6 @@ gcc main.c -o my_program
 ./my_program     # Linux/macOS
 my_program.exe   # Windows
 ```
-
----
 
 ## 1. Install a C Compiler
 
@@ -59,8 +53,6 @@ Update your local package manager index and install the development packages.
   sudo dnf groupinstall "Development Tools"
   ```
 
----
-
 ## 🔍 2. Verify Your Installation
 
 Restart your terminal application and type the following command to verify the compiler is working properly:
@@ -70,8 +62,6 @@ gcc --version
 ```
 
 If a version number outputs on the screen, your compiler is ready to use!
-
----
 
 ## 3. Write, Compile, and Run Your Code
 
@@ -112,8 +102,6 @@ gcc hello.c -o hello
 ```text
 Hello, World!
 ```
-
----
 
 ## Troubleshooting Tips
 
